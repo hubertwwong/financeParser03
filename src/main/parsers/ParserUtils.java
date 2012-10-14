@@ -35,6 +35,8 @@ public class ParserUtils {
 	
 	/**
 	 * a simple utility function that pulls down the first child node.
+	 * forgot what i was using this for...
+	 * i think it was because of how the xml thing was working.
 	 * 
 	 * @param sTag
 	 * @param eElement
