@@ -5,28 +5,32 @@ import static org.junit.Assert.*;
 import java.util.HashMap;
 
 import main.parsers.XBRLParser;
-import main.parsers.XBRLTags;
-import main.runners.XBRLRunner;
+import main.parsers.config.MainSettings;
+import main.parsers.config.XBRLTags;
+import main.parsers.util.DOMUtils;
 
 import org.junit.Test;
+import org.w3c.dom.Document;
+
+import scratch.runners.XBRLRunner;
 
 public class XBRLParserTest {
-
-	@Test
-	public void testGetDEIInfo() {
-		XBRLRunner xr = new XBRLRunner();
-		HashMap<String, String> results = xr.runGetDEIInfoForAAPL();
-		assertNotNull(results);
-		assertEquals("AAPL", results.get(XBRLTags.DEI_SYMBOL));
-	}
 	
-	@Test
-	public void testGetGAAPInfo() {
-		XBRLRunner xr = new XBRLRunner();
-		HashMap<String, String> results = xr.runGetGAAPForAPPL();
-		assertNotNull(results);
-		assertEquals("896000000", results.get("us-gaap:Goodwill"));
-	}
+//	@Test
+//	public void testGetDEIInfo() {
+//		XBRLRunner xr = new XBRLRunner();
+//		HashMap<String, String> results = xr.runGetDEIInfoForAAPL();
+//		assertNotNull(results);
+//		assertEquals("AAPL", results.get(XBRLTags.DEI_SYMBOL));
+//	}
+	
+//	@Test
+//	public void testGetGAAPInfo() {
+//		XBRLRunner xr = new XBRLRunner();
+//		HashMap<String, String> results = xr.runGetGAAPForAPPL();
+//		assertNotNull(results);
+//		assertEquals("896000000", results.get("us-gaap:Goodwill"));
+//	}
 	
 //	@Test
 //	public void testBasicXBRL03() {
