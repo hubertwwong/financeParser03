@@ -71,8 +71,10 @@ public class XBRLFetcher {
 		
 		// grab files..
 		System.out.println("grabbing files.");
+		int maxNumOfFiles = result.size();
+		int currentFileNum = 1;
 		for (Map.Entry<String, String> entry : result.entrySet()) {
-		    String key = entry.getKey();
+			String key = entry.getKey();
 		    String value = entry.getValue();
 		    
 		    // parse out the directory and the file..
@@ -93,13 +95,20 @@ public class XBRLFetcher {
 		    
 		    // delay
 		    try {
-		    	System.out.println("Sleeping " + this.delay + " seconds");
+		    	System.out.printf("Sleeping %d seconds. current progress: %d of %d. percent: %f\n"
+		    			, this.delay
+		    			, currentFileNum
+		    			, maxNumOfFiles
+		    			, (((double)currentFileNum/(double)maxNumOfFiles)*100));
 				Thread.sleep(this.delay * 1000);
 			} 
 		    catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		    
+		    // increment currentFile.
+		    currentFileNum++;
 		}
 		
 		return result;
