@@ -1,0 +1,13 @@
+commit 1eb13fb2392d9597bdb0724e89c96de95081ef6c
+Author: Hubert Wong <hubertwwong@gmail.com>
+Date:   Mon Feb 18 18:37:12 2013 -0800
+
+    Added a git ignore file. basically removed bin.
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..5e56e04
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++/bin
